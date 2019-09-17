@@ -5,7 +5,6 @@
       v-for="floor in floors" :key="floor.number">
       <q-item-section>
         {{ floor.svg }}
-            <button>Add</button>
       </q-item-section>
     </q-item>
   </q-list>
