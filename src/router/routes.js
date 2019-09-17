@@ -4,8 +4,8 @@ const routes = [
     path: '/',
     component: () => import('layouts/MyLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/Index.vue') },
-      { path: '/floor', component: () => import('components/Floor.vue') }
+      { path: '', component: () => import('pages/BuildingIndex.vue') },
+      { name: 'floorDetail', path: '/floor/:floorId/detail', component: () => import('components/Floor.vue'), props: true }
     ]
   }
 ]

@@ -1,7 +1,7 @@
 <template>
   <q-list highlight separator>
     <q-item link
-      :to="`/floor/${floor.number}`"
+      :to="{ name: 'floorDetail', params: { floorId: floor.number }}"
       v-for="floor in floors" :key="floor.number">
       <q-item-section>
         {{ floor.svg }}
