@@ -4,7 +4,7 @@
     <q-header elevated class="bg-primary text-white">
       <q-toolbar>
         <q-toolbar-title>
-          Title
+          Logo
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
@@ -16,7 +16,7 @@
     <q-footer elevated class="bg-grey-8 text-white">
       <q-toolbar>
         <q-toolbar-title>
-          Footer
+          <router-link :to="{ name: 'buildingIndex' }">Building Index</router-link>
         </q-toolbar-title>
       </q-toolbar>
     </q-footer>

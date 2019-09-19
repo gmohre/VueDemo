@@ -77,6 +77,14 @@ module.exports = function (ctx) {
             formatter: require('eslint').CLIEngine.getFormatter('stylish')
           }
         })
+      },
+      chainWebpack (chain, { isServer, isClient }) {
+        const svgRule = chain.module.rule('svg');
+        svgRule.uses.clear();
+        svgRule
+          .use('vue-svg-loader')
+          .loader('vue-svg-loader');
+        svgRule.test(/\.svg$/)
       }
     },
 
@@ -145,8 +153,18 @@ module.exports = function (ctx) {
       extendWebpack (cfg) {
         // do something with Electron main process Webpack cfg
         // chainWebpack also available besides this extendWebpack
-      },
 
+       },
+/*
+      chainWebpack (chain) {
+        const svgRule = chain.module.rule('svg');
+        svgRule.uses.clear();
+        svgRule
+          .test(/\.svg$/)
+          .use('vue-svg-loader')
+          .loader('vue-svg-loader');
+      },
+ */
       packager: {
         // https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#options
 

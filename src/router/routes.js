@@ -4,8 +4,13 @@ const routes = [
     path: '/',
     component: () => import('layouts/MyLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/BuildingIndex.vue') },
-      { name: 'floorDetail', path: '/floor/:floorId/detail', component: () => import('components/Floor.vue'), props: true }
+      { name: 'buildingIndex', path: '', component: () => import('pages/BuildingIndex.vue') },
+      {
+        name: 'floorDetail',
+        path: '/floor/:floorId/detail',
+        component: () => import('components/Floor.vue'),
+        props: (route) => ({ floorId: Number.parseInt(route.params.floorId, 10) })
+      }
     ]
   }
 ]
