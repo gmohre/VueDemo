@@ -1,7 +1,7 @@
 <template>
   <div>
+    <Map :filepath="'statics/drawing.svg'" />
     {{ floorId }} Floor
-    <Map :filepath="'statics/easypeasy.svg'"/>
   </div>
 </template>
 <script>
